@@ -98,6 +98,29 @@ chmod +x ~/.claude/scripts/*.sh
 
 - `CLAUDE_CONTEXT_WINDOW` — 自定义上下文窗口大小（默认：`200000`）
 
+### 根据模型调整上下文窗口
+
+默认按 200k 上下文窗口计算。如果你使用的模型上下文窗口不同，需要在 `~/.claude/settings.json` 的 `env` 中设置 `CLAUDE_CONTEXT_WINDOW`：
+
+```json
+{
+  "env": {
+    "CLAUDE_CONTEXT_WINDOW": "128000"
+  }
+}
+```
+
+常见模型的上下文窗口参考：
+
+| 模型 | 上下文窗口 | 设置值 |
+|------|-----------|--------|
+| Claude Sonnet / Opus | 200k | `200000` |
+| GLM-5.1 | 128k | `128000` |
+| GLM-4.7 | 128k | `128000` |
+| DeepSeek-V3 | 128k | `128000` |
+| GPT-4o | 128k | `128000` |
+| GPT-4o-mini | 128k | `128000` |
+
 ## 卸载
 
 ```bash
@@ -230,6 +253,29 @@ The scripts estimate token usage by:
 ### Environment Variables
 
 - `CLAUDE_CONTEXT_WINDOW` — Override the default 200k context window size (default: `200000`)
+
+### Adjusting Context Window for Your Model
+
+The default calculation uses a 200k context window. If your model has a different window size, set `CLAUDE_CONTEXT_WINDOW` in `~/.claude/settings.json` under `env`:
+
+```json
+{
+  "env": {
+    "CLAUDE_CONTEXT_WINDOW": "128000"
+  }
+}
+```
+
+Common model context window sizes:
+
+| Model | Context Window | Value |
+|-------|---------------|-------|
+| Claude Sonnet / Opus | 200k | `200000` |
+| GLM-5.1 | 128k | `128000` |
+| GLM-4.7 | 128k | `128000` |
+| DeepSeek-V3 | 128k | `128000` |
+| GPT-4o | 128k | `128000` |
+| GPT-4o-mini | 128k | `128000` |
 
 ## Uninstall
 
