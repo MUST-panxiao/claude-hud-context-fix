@@ -101,10 +101,13 @@ if [ -n "$ctx_replacement" ] && [ -n "$hud_output" ]; then
     echo "$hud_output" | python3 -c "
 import sys
 rep = sys.argv[1]
+first = True
 for line in sys.stdin:
-    # Match lines containing context info (Chinese '上下文' or English 'context')
     if '上下文' in line or 'context' in line.lower():
-        print(rep)
+        if first:
+            print(rep)
+            first = False
+        # skip duplicate context lines from HUD
     else:
         print(line, end='')
 " "$ctx_replacement" 2>/dev/null
