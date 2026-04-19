@@ -92,6 +92,8 @@ chmod +x ~/.claude/scripts/*.sh
 3. 估算 token 数 = `字符数 / 4 + 17000`（包含 system/tools 开销）
 4. 除以上下文窗口大小（默认 200k）得到百分比
 
+> **注意：** 新会话刚启动时可能显示约 9%，这是正常的。因为公式中包含 17000 token 的固定开销估算（system prompt、tools 定义、skills 等），即 `17000 / 200000 ≈ 8.5%`。建议关注整体变化趋势而非初始值。
+
 ### 环境变量
 
 - `CLAUDE_CONTEXT_WINDOW` — 自定义上下文窗口大小（默认：`200000`）
@@ -222,6 +224,8 @@ The scripts estimate token usage by:
 2. Counting characters in `user` and `assistant` messages
 3. Estimating tokens as `total_chars / 4 + 17000` (system/tools overhead)
 4. Calculating percentage against a 200k token context window
+
+> **Note:** A fresh session may show ~9% at startup. This is expected — the formula includes a 17000 token fixed overhead estimate (system prompt, tool definitions, skills, etc.), i.e. `17000 / 200000 ≈ 8.5%`. Focus on the overall trend rather than the initial value.
 
 ### Environment Variables
 
