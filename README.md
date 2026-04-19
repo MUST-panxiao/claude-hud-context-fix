@@ -1,10 +1,5 @@
 # claude-hud-context-fix
 
-> 修复 Claude Code HUD 在使用非标准模型时上下文始终显示 0% 的问题。
-> Fix the 0% context display issue in Claude Code's HUD when using non-standard models (e.g., GLM, DeepSeek via Anthropic-compatible APIs).
-
----
-
 **中文说明** | [English](#english)
 
 ## 问题背景
